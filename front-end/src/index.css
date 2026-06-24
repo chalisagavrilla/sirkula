@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply m-0 min-h-screen overflow-hidden bg-[#dce8f8] antialiased;
+  font-family: Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#root {
+  @apply mx-auto my-0 flex h-screen w-full flex-col overflow-hidden bg-white shadow-2xl;
+  max-width: 393px;
+  max-height: 852px;
+}
+
+@media (min-height: 760px) {
+  #root {
+    @apply my-8;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .screen {
+    @apply h-full w-full overflow-y-auto bg-gradient-to-b from-[#f7fbff] via-[#eef6ff] to-[#f7faff] text-[#162033];
+  }
+
+  .status-bar {
+    @apply flex h-8 shrink-0 items-center justify-between px-5 pt-2 text-[9px] font-black;
+  }
+
+  .top-blue {
+    @apply bg-gradient-to-br from-[#2f73ff] via-[#1467f2] to-[#0052cc] text-white shadow-sm;
+  }
+
+  .surface-card {
+    @apply rounded-[22px] border border-white/80 bg-white shadow-[0_14px_34px_rgba(28,47,84,0.08)];
+  }
+
+  .glass-card {
+    @apply rounded-[22px] border border-white/25 bg-white/15 shadow-[0_18px_36px_rgba(10,42,90,0.16)] backdrop-blur;
+  }
+
+  .soft-chip {
+    @apply rounded-full border border-slate-200 bg-white px-3 py-1 text-[10px] font-extrabold text-slate-600 shadow-sm;
+  }
+
+  .field {
+    @apply h-12 w-full rounded-2xl border border-[#dfe7f1] bg-white px-3.5 text-xs font-semibold text-slate-700 outline-none transition focus:border-[#0f6fff] focus:bg-white focus:shadow-[0_0_0_4px_rgba(15,111,255,0.08)];
+  }
+
+  .field-shell {
+    @apply flex h-12 items-center gap-2 rounded-2xl border border-[#dfe7f1] bg-white px-3.5 transition focus-within:border-[#0f6fff] focus-within:bg-white focus-within:shadow-[0_0_0_4px_rgba(15,111,255,0.08)];
+  }
+
+  .primary-btn {
+    @apply h-12 w-full rounded-2xl bg-gradient-to-r from-[#0f7bff] to-[#0059dc] text-xs font-black text-white shadow-[0_14px_24px_rgba(15,111,255,0.28)] transition active:scale-[0.98];
+  }
+
+  .warning-btn {
+    @apply h-12 w-full rounded-2xl bg-gradient-to-r from-[#ffcf37] to-[#ffad1f] text-xs font-black text-slate-950 shadow-[0_12px_22px_rgba(255,179,33,0.28)] transition active:scale-[0.98];
+  }
+
+  .ghost-btn {
+    @apply h-12 w-full rounded-2xl border border-[#0f6fff] bg-white text-xs font-black text-[#0f6fff] transition active:scale-[0.98];
+  }
+}
